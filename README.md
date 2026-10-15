@@ -1,61 +1,76 @@
 # MemoryOS — Persistent Memory for AI Assistants
 
-**Team:** HackX  
-**Track:** AI / Cybersecurity (select the track that matches the event rules)
+**Team Name:** HackX
+**Project Domain:** Artificial Intelligence
+**Project Type:** AI Memory and Personalization System
 
-## Problem
-AI assistants can struggle to retain useful context between separate conversations. Users may have to repeat their goals, preferences, and ongoing project details, which can make assistance feel fragmented and less personalized.
+## Problem Statement
 
-## Proposed solution
-MemoryOS is a prototype for a user-controlled memory layer. It lets users save important context, retrieve relevant memories, and review, edit, or delete what is stored. The current prototype uses SQLite persistence, lightweight rule-based memory extraction, and keyword-based retrieval. It is intentionally designed so these baseline components can later be upgraded with embeddings and an LLM.
+AI assistants often struggle to retain useful context across separate conversations. Users may need to repeatedly explain their preferences, goals, past decisions, and ongoing projects. This can lead to fragmented interactions and less personalized assistance.
 
-## Current features
-- Local persistent storage with SQLite
-- Rule-based detection of common memory phrases
-- Keyword-based memory retrieval
-- Memory vault to add, review, edit, and delete memories
-- Streamlit web interface
-- No paid API key required for the current prototype
+## Our Solution
 
-## Run locally
+MemoryOS is a prototype of an intelligent memory system designed to help AI assistants retain, organize, retrieve, and update relevant information from previous interactions.
+
+Our goal is to provide more continuous, context-aware, and personalized AI experiences while giving users control over their stored memories.
+
+## Current Features
+
+* Persistent memory storage using SQLite.
+* Rule-based detection of certain useful details from user messages.
+* Keyword-based retrieval of relevant memories.
+* Interface for adding, viewing, editing, and deleting memories.
+* Local storage that preserves memories between application sessions.
+
+## Technology Stack
+
+* **Python:** Application logic.
+* **Streamlit:** Interactive web interface.
+* **SQLite:** Persistent memory storage.
+* **GitHub:** Source code management and collaboration.
+
+## How to Run
+
 1. Install Python 3.10 or newer.
+
 2. Clone or download this repository.
-3. In a terminal, enter the project folder.
-4. Create and activate a virtual environment (optional but recommended).
-5. Install dependencies:
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+3. Open a terminal in the project directory.
 
-6. Start the app:
+4. Install dependencies:
 
-   ```bash
-   streamlit run app.py
-   ```
+   `pip install -r requirements.txt`
 
-7. Open the local URL shown in the terminal.
+5. Run the application:
 
-## Demo flow
-1. Enter: `I'm learning Python and I want to build an AI project for a hackathon.`
+   `streamlit run app.py`
+
+6. Open the local URL displayed in the terminal.
+
+## Demo Workflow
+
+1. Enter a message containing information you want the system to remember.
 2. Click **Remember useful details**.
-3. Search for `Python hackathon`.
-4. Open **Memory Vault** and edit or delete a memory.
-5. Refresh the app and confirm the memory remains saved.
+3. Search for related information using the memory retrieval feature.
+4. Open the Memory Vault to review, edit, or delete saved memories.
+5. Restart or refresh the application to verify that stored memories persist.
 
-## Architecture
-- `app.py`: Streamlit UI, rule-based extraction, SQLite storage, and keyword retrieval.
-- `requirements.txt`: Python dependency list.
-- `memoryos.db`: created locally when the app runs; not included in Git.
+## Future Improvements
 
-## Limitations and future work
-This is an early prototype, not a complete autonomous memory system. The current version does not use an LLM, vector embeddings, semantic search, contradiction resolution, encryption, or multi-user authentication. Future work could add semantic retrieval, LLM-powered extraction and responses, memory confidence/expiry, and stronger privacy controls.
+* LLM-powered memory extraction and response generation.
+* Semantic search using embeddings.
+* Better handling of updated or contradictory memories.
+* Memory relevance scoring and expiration.
+* Enhanced privacy and user controls.
+
+## Current Limitations
+
+This prototype currently uses rule-based extraction and keyword-based retrieval. It does not yet implement LLM-powered responses, semantic search, automatic contradiction resolution, or multi-user authentication.
 
 ## Privacy
-The prototype stores data in a local SQLite database. Do not enter sensitive personal information. If deployed publicly, storage isolation, authentication, and privacy protections must be added before real users use it.
 
-## Team contribution
-Add each teammate's actual contribution before final submission.
+The current prototype stores memories in a local SQLite database. Users should avoid entering sensitive personal information.
 
 ## License
-This project is released under the MIT License. See `LICENSE`.
+
+This project is licensed under the MIT License.
